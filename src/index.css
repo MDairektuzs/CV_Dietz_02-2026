@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 99%;
+    --foreground: 220 20% 14%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 14%;
+
+    --primary: 216 60% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 20% 14%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 46%;
+
+    --accent: 220 14% 93%;
+    --accent-foreground: 220 20% 14%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
+    --ring: 216 60% 42%;
+
+    --radius: 0.5rem;
+
+    /* Category colors */
+    --category-work: 216 60% 42%;
+    --category-education: 42 90% 50%;
+    --category-private: 152 50% 40%;
+
+    /* Category backgrounds (very subtle) */
+    --category-work-bg: 216 60% 96%;
+    --category-education-bg: 42 80% 96%;
+    --category-private-bg: 152 40% 96%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 20% 14%;
+    --sidebar-primary: 216 60% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 220 20% 14%;
+    --sidebar-border: 220 13% 90%;
+    --sidebar-ring: 216 60% 42%;
+
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-serif: 'Source Serif 4', Georgia, serif;
+  }
+
+  .dark {
+    --background: 220 20% 7%;
+    --foreground: 220 14% 96%;
+    --card: 220 20% 10%;
+    --card-foreground: 220 14% 96%;
+    --popover: 220 20% 10%;
+    --popover-foreground: 220 14% 96%;
+    --primary: 216 60% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 14% 16%;
+    --secondary-foreground: 220 14% 96%;
+    --muted: 220 14% 16%;
+    --muted-foreground: 220 10% 60%;
+    --accent: 220 14% 18%;
+    --accent-foreground: 220 14% 96%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 14% 18%;
+    --input: 220 14% 18%;
+    --ring: 216 60% 55%;
+
+    --category-work: 216 60% 60%;
+    --category-education: 42 80% 55%;
+    --category-private: 152 50% 50%;
+    --category-work-bg: 216 30% 14%;
+    --category-education-bg: 42 30% 14%;
+    --category-private-bg: 152 20% 14%;
+
+    --sidebar-background: 220 20% 10%;
+    --sidebar-foreground: 220 14% 96%;
+    --sidebar-primary: 216 60% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 16%;
+    --sidebar-accent-foreground: 220 14% 96%;
+    --sidebar-border: 220 14% 18%;
+    --sidebar-ring: 216 60% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-serif);
+  }
+}
+
+@layer utilities {
+  .category-work {
+    color: hsl(var(--category-work));
+  }
+  .category-education {
+    color: hsl(var(--category-education));
+  }
+  .category-private {
+    color: hsl(var(--category-private));
+  }
+  .bg-category-work {
+    background-color: hsl(var(--category-work));
+  }
+  .bg-category-education {
+    background-color: hsl(var(--category-education));
+  }
+  .bg-category-private {
+    background-color: hsl(var(--category-private));
+  }
+  .bg-category-work-subtle {
+    background-color: hsl(var(--category-work-bg));
+  }
+  .bg-category-education-subtle {
+    background-color: hsl(var(--category-education-bg));
+  }
+  .bg-category-private-subtle {
+    background-color: hsl(var(--category-private-bg));
+  }
+  .border-category-work {
+    border-color: hsl(var(--category-work));
+  }
+  .border-category-education {
+    border-color: hsl(var(--category-education));
+  }
+  .border-category-private {
+    border-color: hsl(var(--category-private));
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
