@@ -3,10 +3,8 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  base: '/CV-Dietz-Markus/',
-}) => ({
+export default defineConfig(({ mode }) => ({
+  base: "/CV_Dietz_02-2026/",
   server: {
     host: "::",
     port: 8080,
