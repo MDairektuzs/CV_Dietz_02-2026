@@ -4,9 +4,11 @@ import "./index.css";
 
 const REPO_BASE = "/CV_Dietz_02-2026";
 
-// Wenn die App auf die Root-Domain springt, zurück unter den Repo-Pfad
-if (location.pathname === "/" && location.host.endsWith("github.io")) {
-  history.replaceState(null, "", `${REPO_BASE}/` + location.search + location.hash);
+// Wenn wir auf GitHub Pages unter /<repo>/ starten, normalisieren wir auf /
+if (location.pathname.startsWith(REPO_BASE)) {
+  const newPath = location.pathname.slice(REPO_BASE.length) || "/";
+  const newUrl = newPath + location.search + location.hash;
+  history.replaceState(null, "", newUrl);
 }
 
 createRoot(document.getElementById("root")!).render(<App />);
