@@ -21,11 +21,11 @@ jobs:
       - uses: actions/checkout@v4
 
       - uses: oven-sh/setup-bun@v2
-  with:
-    bun-version: latest
+        with:
+          bun-version: latest
 
-- run: bun install
-- run: bun run build
+      - run: bun install
+      - run: bun run build
 
       - uses: actions/upload-pages-artifact@v3
         with:
