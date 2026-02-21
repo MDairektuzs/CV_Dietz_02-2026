@@ -20,13 +20,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
+      - uses: oven-sh/setup-bun@v2
+  with:
+    bun-version: latest
 
-      - run: npm install
-      - run: npm run build
+- run: bun install
+- run: bun run build
 
       - uses: actions/upload-pages-artifact@v3
         with:
