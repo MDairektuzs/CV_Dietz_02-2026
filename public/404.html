@@ -3,12 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <script>
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        '/CV_Dietz_02-2026/' +
-        l.pathname.slice(1) + l.search + l.hash
-      );
+      sessionStorage.redirect = location.href;
     </script>
+    <meta http-equiv="refresh" content="0;URL='/CV_Dietz_02-2026/'" />
   </head>
 </html>
